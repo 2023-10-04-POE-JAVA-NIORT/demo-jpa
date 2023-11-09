@@ -9,12 +9,11 @@ import java.util.List;
 
 public class PersonDAO {
 
+    private static EntityManager entityManager = EntityManagerSingleton.getEntityManager();
+    private static EntityTransaction tx = entityManager.getTransaction();
+
     // INSERT
     public static void save(Person personToSave) {
-
-        EntityManager entityManager = EntityManagerSingleton.getEntityManager();
-        EntityTransaction tx = entityManager.getTransaction();
-
         tx.begin();
         entityManager.persist(personToSave);
         tx.commit();
@@ -22,15 +21,12 @@ public class PersonDAO {
 
     // SELECT FROM WHERE
     public static Person findById(Long id){
-
-        EntityManager entityManager = EntityManagerSingleton.getEntityManager();
         Person p = entityManager.find(Person.class, id);
         return p;
     }
 
     // SELECT FROM
     public static List<Person> findAll(){
-        EntityManager entityManager = EntityManagerSingleton.getEntityManager();
         Query findAllQuery = entityManager.createQuery("SELECT p FROM Person p");
         List<Person> persons = findAllQuery.getResultList();
         return persons;
@@ -38,8 +34,6 @@ public class PersonDAO {
 
     // DELETE WHERE
     public static void delete(Person personToDelete){
-        EntityManager entityManager = EntityManagerSingleton.getEntityManager();
-        EntityTransaction tx = entityManager.getTransaction();
         tx.begin();
         entityManager.remove(personToDelete);
         tx.commit();
@@ -52,15 +46,11 @@ public class PersonDAO {
 
     // DELETE FROM person p WHERE p.id=4;
     public static void deleteById_v2(Long id){
-        EntityManager entityManager = EntityManagerSingleton.getEntityManager();
-        EntityTransaction tx = entityManager.getTransaction();
-
         tx.begin();
         Query deleteQuery = entityManager.createQuery("DELETE FROM Person p WHERE p.id= :id");
         deleteQuery.setParameter("id", id);
         deleteQuery.executeUpdate();
         tx.commit();
-
     }
 
 
