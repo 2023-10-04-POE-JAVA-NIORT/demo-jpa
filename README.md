@@ -1,1 +1,1 @@
-# JUnit5-jcd-starter
+# DEMO JPA
