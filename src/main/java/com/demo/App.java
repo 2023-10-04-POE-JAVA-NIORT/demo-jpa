@@ -23,12 +23,14 @@ public class App
         System.out.println(p);
         */
 
-
+/*
         List<Person> people = PersonDAO.findAll();
         for (Person p : people){
             System.out.println(p);
         }
-
+ */
+        Person p = PersonDAO.findById(2L);
+        PersonDAO.delete(p);
     }
 
 }
