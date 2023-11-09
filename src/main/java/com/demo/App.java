@@ -11,7 +11,7 @@ public class App
 {
     public static void main( String[] args )
     {
-        /*
+/*
         Person alain = new Person("Alain", "Delon");
         PersonDAO.save(alain);
 
@@ -28,9 +28,14 @@ public class App
         for (Person p : people){
             System.out.println(p);
         }
- */
+
         Person p = PersonDAO.findById(2L);
         PersonDAO.delete(p);
+
+ */
+        //PersonDAO.deleteById(4L);
+        PersonDAO.deleteById_v2(1L);
+
     }
 
 }
