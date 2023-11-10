@@ -3,7 +3,15 @@ package com.demo.jpa;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
-
+/*
+CREATE TABLE films (
+    id SERIAL PRIMARY KEY,
+    titre VARCHAR(150) NOT NULL,
+    date_sortie DATE NOT NULL,
+    interdit_aux_mineurs BOOLEAN NOT NULL,
+    genre VARCHAR(50) NOT NULL
+);
+ */
 @Entity
 @Table(name="films")
 public class Film {
