@@ -9,7 +9,8 @@ import java.util.List;
 
 public class PersonDAO {
 
-    private static EntityManager entityManager = EntityManagerSingleton.getEntityManager();
+    private static EntityManager entityManager =
+            EntityManagerSingleton.getEntityManager("demojpa");
     private static EntityTransaction tx = entityManager.getTransaction();
 
     // INSERT
