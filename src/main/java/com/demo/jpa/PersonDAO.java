@@ -65,4 +65,12 @@ public class PersonDAO {
         tx.commit();
     }
 
+    // SELECT WHERE
+    public static List<Person> findByFirstName(String firstName){
+        Query query = entityManager.createQuery("SELECT p FROM Person p WHERE p.firstName = :firstName");
+        query.setParameter("firstName", firstName);
+        List<Person> persons = query.getResultList();
+        return persons;
+    }
+
 }

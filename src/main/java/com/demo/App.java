@@ -11,13 +11,12 @@ public class App
 {
     public static void main( String[] args )
     {
-        /*
-        Person alain = new Person("Alain", "Delon");
-        PersonDAO.save(alain);
+/*
 
-        Person marie = new Person("Marie", "Dufour");
-        PersonDAO.save(marie);*/
-
+        PersonDAO.save(new Person("Alain", "Dominguez"));
+        PersonDAO.save(new Person("Marie", "Dufour"));
+        PersonDAO.save(new Person("Marie", "Dupond"));
+*/
 /*
         Person p = PersonDAO.findById(3L);
         System.out.println(p);
@@ -35,11 +34,16 @@ public class App
  */
         //PersonDAO.deleteById(4L);
         //PersonDAO.deleteById_v2(1L);
-
+/*
         Person persontToUpdate = new Person();
         persontToUpdate.setFirstName("Alex");
         PersonDAO.update(2L, persontToUpdate);
+*/
 
+        List<Person> maries = PersonDAO.findByFirstName("Marie");
+        for(Person marie : maries){
+            System.out.println(marie);
+        }
     }
 
 }
