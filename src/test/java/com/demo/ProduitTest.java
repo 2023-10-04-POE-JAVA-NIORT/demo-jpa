@@ -18,6 +18,10 @@ public class ProduitTest
                 LocalDate.of(2023, 2, 25), 1000, "Apple");
 
         ProduitDAO.save(nouveauProduit);
+        // à partir de maintenant mon objet nouveauProduit contient la valeur de l'id
+        // car Hibernate le remplit automatiquement
+
+        assertNotNull(ProduitDAO.findById(nouveauProduit.getId()));
     }
 
     @Test
