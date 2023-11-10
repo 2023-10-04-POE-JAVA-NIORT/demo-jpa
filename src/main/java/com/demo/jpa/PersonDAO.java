@@ -54,5 +54,15 @@ public class PersonDAO {
         tx.commit();
     }
 
+    // UPDATE
+    public static void update(Long id, Person personToUpdate){
+
+        Person personFromDatabase = findById(id);
+        personFromDatabase.setNotNull(personToUpdate);
+
+        tx.begin();
+        entityManager.merge(personFromDatabase);
+        tx.commit();
+    }
 
 }
