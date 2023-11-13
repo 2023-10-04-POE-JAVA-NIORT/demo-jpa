@@ -29,4 +29,18 @@ public class ChienTest
         Chien chien = ChienDAO.findById(4L);
         ChienDAO.delete(chien);
     }
+
+    @Test
+    void creationChienSansMaitre(){
+        Chien medor = new Chien("Medor",5, "Berger allemand" );
+        ChienDAO.save(medor);
+    }
+
+    @Test
+    void testChienSansMaitre(){
+        Chien chien = ChienDAO.findById(6L);
+        chien.setMaitre(PersonDAO.findById(1L));
+        ChienDAO.update(6L, chien);
+        System.out.println(chien);
+    }
 }

@@ -51,13 +51,18 @@ public class ChienDAO {
     }
 
     // UPDATE
-    public static void update(Long id, Chien a){
-
+    public static void update(Long id, Chien c){
+        tx.begin();
+        entityManager.merge(c);
+        tx.commit();
+/*
         Chien fromDatabase = findById(id);
-        //fromDatabase.setNotNull(a);
+        fromDatabase.setNotNull(a);
 
         tx.begin();
         entityManager.merge(fromDatabase);
         tx.commit();
+
+ */
     }
 }
