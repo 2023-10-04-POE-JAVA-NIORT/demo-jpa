@@ -82,6 +82,7 @@ public class Stage {
                 ", titre='" + titre + '\'' +
                 ", description='" + description + '\'' +
                 ", horaire=" + horaire +
+                ", stagiaires=" + stagiaires +
                 '}';
     }
 }

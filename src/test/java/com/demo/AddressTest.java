@@ -52,4 +52,10 @@ public class AddressTest
         java.addStagiaire(PersonDAO.findById(3L));
         StageDAO.save(java);
     }
+
+    @Test
+    void lireStage(){
+        Stage salsa = StageDAO.findById(1L);
+        System.out.println(salsa);
+    }
 }
