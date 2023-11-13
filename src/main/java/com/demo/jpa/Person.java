@@ -15,6 +15,9 @@ public class Person {
     @Column(name = "last_name")
     private String lastName;
 
+    @ManyToOne
+    private Address address;
+
     public Person() {
     }
     public Person(String firstName, String lastName) {
@@ -60,5 +63,13 @@ public class Person {
             this.setFirstName(personToUpdate.getFirstName());
         if(personToUpdate.getLastName() != null)
             this.setLastName(personToUpdate.getLastName());
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 }

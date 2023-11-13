@@ -4,7 +4,6 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Query;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class PersonDAO {

@@ -2,15 +2,10 @@ package com.demo;
 
 import com.demo.jpa.*;
 import org.junit.jupiter.api.Test;
-
 import java.time.LocalDate;
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 public class FilmTest
 {
-
     @Test
     void testCreateFilm1(){
         Film film1 = new Film("Les bronzés",
