@@ -14,7 +14,7 @@ public class Chien {
     private int age;
     private String race;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Person maitre;
 
 
