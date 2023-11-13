@@ -18,4 +18,9 @@ public class AddressTest
 
     }
 
+    @Test
+    void testAddressLecture(){
+        Person alain = PersonDAO.findById(1L);
+        System.out.println(alain);
+    }
 }
