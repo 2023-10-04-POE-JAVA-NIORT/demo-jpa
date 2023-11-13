@@ -2,6 +2,9 @@ package com.demo.jpa;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name="persons")
 public class Person {
@@ -17,6 +20,14 @@ public class Person {
 
     @ManyToOne
     private Address address;
+
+    @ManyToMany
+    @JoinTable(
+            name="sports_persons",
+            joinColumns = @JoinColumn(name = "sportifs_id"),
+            inverseJoinColumns =  @JoinColumn(name = "sport_id")
+    )
+    private List<Sport> sports = new ArrayList<>();
 
     public Person() {
     }
@@ -72,5 +83,13 @@ public class Person {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public List<Sport> getSports() {
+        return sports;
+    }
+
+    public void setSports(List<Sport> sports) {
+        this.sports = sports;
     }
 }

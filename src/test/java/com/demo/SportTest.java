@@ -43,4 +43,20 @@ public class SportTest
         SportDAO.save(rugby);
     }
 
+    @Test
+    void testSport5() {
+        Sport foot = SportDAO.findById(1L);
+        List<Person> sportifs = foot.getSportifs();
+        for(Person p : sportifs)
+            System.out.println(p);
+    }
+
+    @Test
+    void testSport6(){
+        // teste la relation bi-directionnelle
+        Person sportif = PersonDAO.findById(2L);
+        List<Sport> sports = sportif.getSports();
+        for(Sport s : sports)
+            System.out.println(s);
+    }
 }

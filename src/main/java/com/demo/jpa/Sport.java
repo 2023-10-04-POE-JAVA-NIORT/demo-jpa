@@ -69,7 +69,6 @@ public class Sport {
                 "id=" + id +
                 ", nom='" + nom + '\'' +
                 ", categorie='" + categorie + '\'' +
-                ", sportifs=" + sportifs +
                 '}';
     }
 }
