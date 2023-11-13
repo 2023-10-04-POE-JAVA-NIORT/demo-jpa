@@ -58,4 +58,11 @@ public class AddressTest
         Stage salsa = StageDAO.findById(1L);
         System.out.println(salsa);
     }
+
+    @Test
+    void demoLazy(){
+        Stage salsa = StageDAO.findById(1L);
+        System.out.println(salsa.getDescription());
+        System.out.println(salsa.getStagiaires().get(0).getFirstName());
+    }
 }
